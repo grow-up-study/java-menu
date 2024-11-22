@@ -20,7 +20,7 @@ public enum MenuCategory {
     }
 
     public static MenuCategory getMenuCategory(int index) {
-        return values()[index];
+        return values()[index - 1];
     }
 
     public String getName() {
