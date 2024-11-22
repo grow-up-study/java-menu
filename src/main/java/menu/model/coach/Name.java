@@ -1,6 +1,6 @@
 package menu.model.coach;
 
-import static menu.util.ErrorMessage.ERROR_NAME_LENGTH;
+import static menu.util.message.ErrorMessage.ERROR_NAME_LENGTH;
 
 public class Name {
 
@@ -15,5 +15,9 @@ public class Name {
         if(name.length() < 2 || name.length() > 4){
             throw new IllegalArgumentException(ERROR_NAME_LENGTH.getMessage());
         }
+    }
+
+    public String getName(){
+        return name;
     }
 }
