@@ -12,7 +12,7 @@ public class InputView {
         return Console.readLine();
     }
 
-    public static String getHateFoods(String name){
+    public static String getHateFoods(String name) {
         System.out.printf(INPUT_HATE_FOOD.getMessage(), name);
         System.out.println();
         return Console.readLine();

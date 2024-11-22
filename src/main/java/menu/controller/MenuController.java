@@ -12,25 +12,25 @@ import menu.view.OutputView;
 public class MenuController {
     private Coaches coaches;
 
-    public void run(){
+    public void run() {
         OutputView.printStart();
 
         process(this::makeCoaches);
         process(this::inputHateFoods);
-        process(this::as);
+        process(this::recommend);
     }
 
-    private void makeCoaches(){
+    private void makeCoaches() {
         coaches = new Coaches(InputView.getCoachNames());
     }
 
-    private void inputHateFoods(){
-        for(Coach coach : coaches.getCoaches()){
+    private void inputHateFoods() {
+        for (Coach coach : coaches.getCoaches()) {
             coach.setHateFoods(InputView.getHateFoods(coach.getName()));
         }
     }
 
-    private void as(){
+    private void recommend() {
         WeeklyCategory weeklyCategory = new WeeklyCategory(new RandomNumberGenerator());
         WeeklyMenu weeklyMenu = new WeeklyMenu(weeklyCategory, coaches);
         weeklyMenu.pickWeeklyMenu();

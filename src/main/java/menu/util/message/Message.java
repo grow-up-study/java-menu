@@ -8,19 +8,17 @@ public enum Message {
     RECOMMEND_RESULT("메뉴 추천 결과입니다."),
     RECOMMEND_RESULT_WEEKDAYS("[ 구분 | 월요일 | 화요일 | 수요일 | 목요일 | 금요일 ]"),
     RECOMMEND_RESULT_CATEGORIES("[ 카테고리 | %s | %s | %s | %s | %s ]"),
-    RECOMMEND_COACH_MENU("[ %s | %s | %s | %s | %s ]"),
     RECOMMEND_END("추천을 완료했습니다."),
-    PARSE_REGEX ("[^가-힣a-zA-Z,]"),
+    PARSE_REGEX("[^가-힣a-zA-Z,]"),
     ;
-
 
     private final String message;
 
-    Message(String message){
+    Message(String message) {
         this.message = message;
     }
 
-    public String getMessage(){
+    public String getMessage() {
         return message;
     }
 }

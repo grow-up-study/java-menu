@@ -24,7 +24,6 @@ public class OutputView {
             resultDTO.getCategories().get(4));
         System.out.println();
 
-
         for (Map.Entry<String, List<String>> entry : resultDTO.getResult().entrySet()) {
             String name = entry.getKey();
             List<String> menus = entry.getValue();

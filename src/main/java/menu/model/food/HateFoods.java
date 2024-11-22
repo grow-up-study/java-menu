@@ -29,7 +29,7 @@ public class HateFoods {
         if (foods.size() != foods.stream().distinct().count()) {
             throw new IllegalArgumentException(ERROR_DUPLICATE_MENUS.getMessage());
         }
-        if(foods.size() > 2){
+        if (foods.size() > 2) {
             throw new IllegalArgumentException(ERROR_HATE_FOODS_COUNT.getMessage());
         }
     }

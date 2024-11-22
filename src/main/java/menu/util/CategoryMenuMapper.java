@@ -1,6 +1,5 @@
 package menu.util;
 
-
 import menu.model.category.type.Category;
 import menu.model.food.menu.Asian;
 import menu.model.food.menu.Chiness;
@@ -11,20 +10,20 @@ import menu.model.food.menu.Western;
 
 public class CategoryMenuMapper {
 
-    public static Menus from(Category category){
-        if(category == Category.JAPANESS){
+    public static Menus from(Category category) {
+        if (category == Category.JAPANESS) {
             return new Japaness();
         }
-        if(category == Category.KOREAN){
+        if (category == Category.KOREAN) {
             return new Korean();
         }
-        if(category == Category.CHINESS){
+        if (category == Category.CHINESS) {
             return new Chiness();
         }
-        if(category == Category.ASIAN){
+        if (category == Category.ASIAN) {
             return new Asian();
         }
-        if(category == Category.WESTERN){
+        if (category == Category.WESTERN) {
             return new Western();
         }
 

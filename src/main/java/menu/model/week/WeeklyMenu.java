@@ -9,13 +9,13 @@ public class WeeklyMenu {
 
     private final Coaches coaches;
 
-    public WeeklyMenu(WeeklyCategory weeklyCategory, Coaches coaches){
+    public WeeklyMenu(WeeklyCategory weeklyCategory, Coaches coaches) {
         this.weeklyCategory = weeklyCategory;
         this.coaches = coaches;
     }
 
-    public void pickWeeklyMenu(){
-        for(Category category : weeklyCategory.getWeekCategory()){
+    public void pickWeeklyMenu() {
+        for (Category category : weeklyCategory.getWeekCategory()) {
             coaches.pickMenu(category);
         }
     }

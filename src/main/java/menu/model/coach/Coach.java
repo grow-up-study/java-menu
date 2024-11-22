@@ -44,7 +44,7 @@ public class Coach {
         return name.getName();
     }
 
-    public List<Food> getWeekFoods(){
+    public List<Food> getWeekFoods() {
         return weekFoods;
     }
 }

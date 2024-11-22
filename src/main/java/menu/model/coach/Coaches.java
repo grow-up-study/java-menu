@@ -39,8 +39,8 @@ public class Coaches {
         return coaches;
     }
 
-    public void pickMenu(Category category){
-        for(Coach coach : coaches){
+    public void pickMenu(Category category) {
+        for (Coach coach : coaches) {
             coach.addWeekFoods(CategoryMenuMapper.from(category).getRandomMenu());
         }
     }
