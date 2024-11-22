@@ -1,4 +1,4 @@
-package menu.util;
+package menu.util.message;
 
 public enum Message {
 
