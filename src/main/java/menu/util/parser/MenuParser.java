@@ -7,19 +7,20 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class NameParser {
+public class MenuParser {
 
-    private final List<String> names;
+    private final List<String> menus;
 
-    public NameParser(String input) {
-        this.names = splitName(input);
+    public MenuParser(String input) {
+        this.menus = splitMenu(input);
         validateDuplicate();
     }
 
-    private List<String> splitName(String inputName) {
-        validateEmpty(inputName);
-        validateSeparator(inputName);
-        return List.of(inputName.split(","));
+    private List<String> splitMenu(String inputMenu) {
+        validateEmpty(inputMenu);
+        validateSeparator(inputMenu);
+
+        return List.of(inputMenu.split(","));
     }
 
     private void validateSeparator(String inputName) {
@@ -37,12 +38,12 @@ public class NameParser {
     }
 
     private void validateDuplicate() {
-        if (names.size() != names.stream().distinct().count()) {
-            throw new IllegalArgumentException(ERROR_DUPLICATE_NAMES.getMessage());
+        if (menus.size() != menus.stream().distinct().count()) {
+            throw new IllegalArgumentException(ERROR_DUPLICATE_MENUS.getMessage());
         }
     }
 
-    public List<String> getNames() {
-        return names;
+    public List<String> getMenus() {
+        return menus;
     }
 }
