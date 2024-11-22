@@ -9,20 +9,16 @@ import java.util.regex.Pattern;
 
 public class NameParser {
 
-    private final List<String> names;
-
-    public NameParser(String input) {
-        this.names = splitName(input);
-        validateDuplicate();
+    private NameParser() {
     }
 
-    private List<String> splitName(String inputName) {
+    public static List<String> splitName(String inputName) {
         validateEmpty(inputName);
         validateSeparator(inputName);
         return List.of(inputName.split(","));
     }
 
-    private void validateSeparator(String inputName) {
+    private static void validateSeparator(String inputName) {
         Pattern pattern = Pattern.compile(PARSE_REGEX.getMessage());
         Matcher matcher = pattern.matcher(inputName);
         if (matcher.find()) {
@@ -30,19 +26,16 @@ public class NameParser {
         }
     }
 
-    private void validateEmpty(String inputName) {
+    private static void validateEmpty(String inputName) {
         if (inputName.isBlank()) {
             throw new IllegalArgumentException(ERROR_EMPTY.getMessage());
         }
     }
 
-    private void validateDuplicate() {
+    // TODO: 이름 중복 검사 필요
+    /*private void validateDuplicate() {
         if (names.size() != names.stream().distinct().count()) {
             throw new IllegalArgumentException(ERROR_DUPLICATE_NAMES.getMessage());
         }
-    }
-
-    public List<String> getNames() {
-        return names;
-    }
+    }*/
 }
