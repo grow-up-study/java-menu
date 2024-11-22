@@ -18,4 +18,16 @@ public enum MenuCategory {
         this.name = name;
         this.menus = menus;
     }
+
+    public static MenuCategory getMenuCategory(int index) {
+        return values()[index];
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public List<String> getMenus() {
+        return menus;
+    }
 }
