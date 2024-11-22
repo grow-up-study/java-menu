@@ -16,7 +16,7 @@ public class MenuRecommender {
                 .collect(Collectors.toList());
     }
 
-    public String recommendMenu(Coach coach, MenuCategory menuCategory) {
+    private String recommendMenu(Coach coach, MenuCategory menuCategory) {
         String menu = pickRandomMenu(menuCategory);
         if (coach.containsDislikeMenu(menu)) {
             return pickRandomMenu(menuCategory);
