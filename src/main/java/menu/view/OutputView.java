@@ -22,7 +22,7 @@ public class OutputView {
         stringBuilder.appendLine(OUTPUT_RECOMMEND_TITLE.getMessage());
         stringBuilder.appendLine(OUTPUT_RECOMMEND_HEADER.getMessage());
         stringBuilder.appendLine(OUTPUT_RECOMMEND_CATEGORIES.format(menuRecommendDTO.getCategories().toArray()));
-        menuRecommendDTO.getRecommendedCoachMenu()
+        menuRecommendDTO.getRecommendedMenu()
                 .forEach((key, value) -> {
                     List<String> recommend = new ArrayList<>(value);
                     recommend.add(0, key);
