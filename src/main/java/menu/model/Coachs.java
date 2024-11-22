@@ -12,6 +12,10 @@ public class Coachs {
         this.coaches = coaches;
     }
 
+    public List<Coach> get() {
+        return coaches;
+    }
+
     private void validateCoachCount(List<Coach> coaches) {
         if (coaches.size() < 2 || coaches.size() > 5) {
             throw new CoachCountException();

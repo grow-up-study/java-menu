@@ -11,6 +11,10 @@ public final class Name {
         this.name = name;
     }
 
+    public String value() {
+        return name;
+    }
+
     private void validateNameFormat(String name) {
         if (name.length() < 2 || name.length() > 4) {
             throw new NameFormatException();
