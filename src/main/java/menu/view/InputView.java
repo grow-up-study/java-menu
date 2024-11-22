@@ -1,7 +1,7 @@
 package menu.view;
 
-import static menu.util.Message.INPUT_COACH_NAME;
-import static menu.util.Message.INPUT_HATE_FOOD;
+import static menu.util.message.Message.INPUT_COACH_NAME;
+import static menu.util.message.Message.INPUT_HATE_FOOD;
 
 import camp.nextstep.edu.missionutils.Console;
 
@@ -14,6 +14,7 @@ public class InputView {
 
     public static String getHateFoods(String name){
         System.out.printf(INPUT_HATE_FOOD.getMessage(), name);
+        System.out.println();
         return Console.readLine();
     }
 }
