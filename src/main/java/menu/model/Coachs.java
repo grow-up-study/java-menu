@@ -3,7 +3,7 @@ package menu.model;
 import java.util.List;
 import menu.exception.CoachCountException;
 
-public class Coachs {
+public final class Coachs {
 
     private final List<Coach> coaches;
 

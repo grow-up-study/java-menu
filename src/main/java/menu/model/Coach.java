@@ -6,10 +6,10 @@ import java.util.List;
 public class Coach {
 
     private final Name name;
-    private final List<String> dislikeMenu;
+    private final DislikeMenu dislikeMenu;
     private List<String> recommendedMenus = new ArrayList<>();
 
-    public Coach(Name name, List<String> dislikeMenu) {
+    public Coach(Name name, DislikeMenu dislikeMenu) {
         this.name = name;
         this.dislikeMenu = dislikeMenu;
     }
@@ -26,11 +26,15 @@ public class Coach {
         recommendedMenus = menus;
     }
 
-    public boolean containsDislikeMenu(String menu) {
-        return dislikeMenu.contains(menu);
+    public void addRecommendedMenu(String menu) {
+        recommendedMenus.add(menu);
     }
 
-    public boolean containsRecommandedMenu(String menu) {
+    public boolean containsDislikeMenu(String menu) {
+        return dislikeMenu.getDislikeMenus().contains(menu);
+    }
+
+    public boolean containsRecommendedMenu(String menu) {
         return recommendedMenus.contains(menu);
     }
 }

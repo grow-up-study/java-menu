@@ -5,6 +5,7 @@ import java.util.function.Supplier;
 import java.util.stream.Collectors;
 import menu.model.Coach;
 import menu.model.Coachs;
+import menu.model.DislikeMenu;
 import menu.model.Name;
 import menu.service.MenuService;
 import menu.view.InputView;
@@ -28,7 +29,8 @@ public class MenuController {
     }
 
     private Coach convertCoach(Name name) {
-        return new Coach(name, handleInput(() -> inputDislikeMenu(name)));
+        DislikeMenu dislikeMenu = new DislikeMenu(handleInput(() -> inputDislikeMenu(name)));
+        return new Coach(name, dislikeMenu);
     }
 
     private List<Name> inputCoachName() {
