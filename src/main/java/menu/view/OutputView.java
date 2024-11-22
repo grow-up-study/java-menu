@@ -22,18 +22,22 @@ public class OutputView {
         stringBuilder.appendLine(OUTPUT_RECOMMEND_TITLE.getMessage());
         stringBuilder.appendLine(OUTPUT_RECOMMEND_HEADER.getMessage());
         stringBuilder.appendLine(OUTPUT_RECOMMEND_CATEGORIES.format(menuRecommendDTO.getCategories().toArray()));
-        menuRecommendDTO.getRecommendedMenu()
-                .forEach((key, value) -> {
-                    List<String> recommend = new ArrayList<>(value);
-                    recommend.add(0, key);
-                    stringBuilder.appendLine(OUTPUT_RECOMMEND.format(recommend));
-                });
-        stringBuilder.appendLine("");
+        appendRecommendDetail(menuRecommendDTO, stringBuilder);
+        stringBuilder.appendDivideLine();
         stringBuilder.appendLine(OUTPUT_RECOMMEND_COMPLETE.getMessage());
         stringBuilder.print();
     }
 
     public void printErrorMessage(String message) {
         System.out.println(message);
+    }
+
+    private void appendRecommendDetail(MenuRecommendDTO menuRecommendDTO, PrintStringBuilder stringBuilder) {
+        menuRecommendDTO.getRecommendedMenu().forEach((coachName, recommendMenus) -> {
+            List<String> recommendDetail = new ArrayList<>();
+            recommendDetail.add(coachName);
+            recommendDetail.addAll(recommendMenus);
+            stringBuilder.appendLine(OUTPUT_RECOMMEND.format(recommendDetail));
+        });
     }
 }

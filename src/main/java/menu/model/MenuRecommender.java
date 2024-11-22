@@ -4,6 +4,8 @@ import camp.nextstep.edu.missionutils.Randoms;
 
 public class MenuRecommender {
 
+    private static final int FIRST_MENU = 0;
+
     public void recommendMenus(Coach coach, DaysCategory daysCategory) {
         daysCategory.getCategories().values()
                 .forEach(menuCategory -> recommendMenu(coach, menuCategory));
@@ -23,6 +25,6 @@ public class MenuRecommender {
     }
 
     private String pickRandomMenu(MenuCategory menuCategory) {
-        return Randoms.shuffle(menuCategory.getMenus()).get(0);
+        return Randoms.shuffle(menuCategory.getMenus()).get(FIRST_MENU);
     }
 }

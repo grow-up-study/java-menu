@@ -7,6 +7,10 @@ public class PrintStringBuilder {
         stringBuilder.append(line).append('\n');
     }
 
+    public void appendDivideLine() {
+        stringBuilder.append('\n');
+    }
+
     public void print() {
         System.out.println(stringBuilder);
     }

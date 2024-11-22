@@ -13,6 +13,7 @@ public enum MenuCategory {
 
     final String name;
     final List<String> menus;
+    private static final int OFFSET = 1;
 
     MenuCategory(String name, List<String> menus) {
         this.name = name;
@@ -20,7 +21,7 @@ public enum MenuCategory {
     }
 
     public static MenuCategory getMenuCategory(int index) {
-        return values()[index - 1];
+        return values()[index - OFFSET];
     }
 
     public String getName() {

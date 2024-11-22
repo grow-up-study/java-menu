@@ -6,6 +6,7 @@ import menu.exception.DislikeMenuCountException;
 public class DislikeMenu {
 
     private final List<String> dislikeMenus;
+    private static final int DISLIKE_MENU_MAXIMUM_COUNT = 2;
 
     public DislikeMenu(List<String> dislikeMenus) {
         validateMenus(dislikeMenus);
@@ -17,7 +18,7 @@ public class DislikeMenu {
     }
 
     private void validateMenus(List<String> dislikeMenus) {
-        if (dislikeMenus.size() > 2) {
+        if (dislikeMenus.size() > DISLIKE_MENU_MAXIMUM_COUNT) {
             throw new DislikeMenuCountException();
         }
     }
