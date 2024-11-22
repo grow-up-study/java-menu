@@ -29,15 +29,14 @@ public class MenuController {
     }
 
     private Coach convertCoach(Name name) {
-        DislikeMenu dislikeMenu = new DislikeMenu(handleInput(() -> inputDislikeMenu(name)));
+        List<String> dislikeMenes = handleInput(() -> inputDislikeMenu(name));
+        DislikeMenu dislikeMenu = menuService.createDislikeMenu(dislikeMenes);
         return new Coach(name, dislikeMenu);
     }
 
     private List<Name> inputCoachName() {
-        return Parser.parseCoachName(inputView.inputCoachs())
-                .stream()
-                .map(Name::new)
-                .collect(Collectors.toList());
+        List<String> names = Parser.parseCoachName(inputView.inputCoachs());
+        return menuService.createName(names);
     }
 
     private List<String> inputDislikeMenu(Name name) {

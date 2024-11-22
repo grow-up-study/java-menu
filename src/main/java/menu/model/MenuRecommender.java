@@ -1,9 +1,6 @@
-package menu.model.recommender;
+package menu.model;
 
 import camp.nextstep.edu.missionutils.Randoms;
-import menu.model.Coach;
-import menu.model.DaysCategory;
-import menu.model.MenuCategory;
 
 public class MenuRecommender {
 
