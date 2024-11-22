@@ -22,6 +22,7 @@ public class Coaches {
         List<String> names = NameParser.splitName(input);
 
         for (String name : names) {
+            validateDuplicateName(name);
             coaches.add(new Coach(name));
         }
     }
@@ -32,6 +33,12 @@ public class Coaches {
         }
         if (coaches.size() > 5) {
             throw new IllegalArgumentException(ERROR_COACH_MAX_COUNT.getMessage());
+        }
+    }
+
+    private void validateDuplicateName(String name){
+        if(coaches.contains(new Coach(name))){
+            throw new IllegalArgumentException(ERROR_DUPLICATE_NAMES.getMessage());
         }
     }
 

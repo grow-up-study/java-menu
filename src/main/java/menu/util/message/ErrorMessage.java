@@ -10,6 +10,7 @@ public enum ErrorMessage {
     ERROR_DUPLICATE_NAMES("[ERROR] 중복되는 이름이 있습니다."),
     ERROR_DUPLICATE_MENUS("[ERROR] 중복되는 메뉴가 있습니다."),
     ERROR_HATE_FOODS_COUNT("[ERROR] 못 먹는 메뉴는 0개 이상 2개 이하여야 합니다."),
+    ERROR_HATE_FOOD("[ERROR] 못 먹는 메뉴입니다.")
     ;
 
     private final String errorMessage;

@@ -1,5 +1,8 @@
 package menu.model.coach;
 
+import static menu.util.message.ErrorMessage.ERROR_DUPLICATE_MENUS;
+import static menu.util.message.ErrorMessage.ERROR_HATE_FOOD;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -26,13 +29,13 @@ public class Coach {
 
     private void validateDuplicateFood(String foodName) {
         if (weekFoods.contains(new Food(foodName))) {
-            throw new IllegalArgumentException("중복되는 메뉴입니다.");
+            throw new IllegalArgumentException(ERROR_DUPLICATE_MENUS.getMessage());
         }
     }
 
     private void validateHateFood(String foodName) {
         if (hateFoods.getFoods().contains(new Food(foodName))) {
-            throw new IllegalArgumentException("못먹는 음식입니다.");
+            throw new IllegalArgumentException(ERROR_HATE_FOOD.getMessage());
         }
     }
 
