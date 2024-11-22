@@ -7,7 +7,7 @@ public class Coach {
 
     private final Name name;
     private final DislikeMenu dislikeMenu;
-    private List<String> recommendedMenus = new ArrayList<>();
+    private final List<String> recommendedMenus = new ArrayList<>();
 
     public Coach(Name name, DislikeMenu dislikeMenu) {
         this.name = name;
