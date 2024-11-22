@@ -11,18 +11,22 @@ public enum Category {
     WESTERN(5, "양식")
     ;
 
-    private Integer num;
-    private String name;
+    private final Integer num;
+    private final String name;
 
     Category(int num, String name){
         this.num = num;
         this.name = name;
     }
 
-    public Category getCategory(Integer categoryNum){
+    public static Category getCategory(Integer categoryNum){
         return Arrays.stream(values())
             .filter(value -> value.num.equals(categoryNum))
             .findAny()
             .orElse(null);
+    }
+
+    public String getName() {
+        return name;
     }
 }
