@@ -19,11 +19,7 @@ public class Coach {
     }
 
     public List<String> getRecommendedMenus() {
-        return recommendedMenus;
-    }
-
-    public void setRecommendedMenu(List<String> menus) {
-        recommendedMenus = menus;
+        return new ArrayList<>(recommendedMenus);
     }
 
     public void addRecommendedMenu(String menu) {
